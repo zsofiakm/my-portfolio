@@ -1,6 +1,9 @@
 import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
 
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 import classNames from 'classnames';
 
 import { Flex, Background } from '@/once-ui/components'
@@ -108,6 +111,8 @@ export default function RootLayout({ children } : RootLayoutProps) {
 					</Flex>
 				</Flex>
 				<Footer/>
+				<Analytics/>
+				<SpeedInsights/>
 			</Flex>
 		</Flex>
 	);
