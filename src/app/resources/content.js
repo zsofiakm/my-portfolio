@@ -1,7 +1,11 @@
 import { SmartLink } from "@/once-ui/components";
 
 const person = {
-    name:      'Zsofia Komaromi',
+    firstName: 'Zsofia',
+    lastName:  'Komaromi',
+    get name() {
+        return `${this.firstName} ${this.lastName}`;
+    },
     role:      'Founder & Product Designer',
     avatar:    '/images/avatar.png',
     location:  'Europe/Vienna',       // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
