@@ -56,6 +56,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     style={{
                         ...(images.length > 1 && {
                             cursor: 'pointer',
+                            border: '1px solid var(--neutral-alpha-weak)',
                             opacity: isTransitioning ? 0.2 : 1,
                             transition: 'opacity 0.2s ease',
                         }),
@@ -110,7 +111,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                         {description?.trim() && (
                             <Text
                                 wrap="balance"
-                                variant="body-default-m"
+                                variant="body-default-s"
                                 onBackground="neutral-weak">
                                 {description}
                             </Text>
@@ -122,7 +123,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                 href={href}>
                                     <Text
                                         variant="body-default-s">
-                                        Read case study
+                                        Read more
                                     </Text>
                             </SmartLink>
                         )}

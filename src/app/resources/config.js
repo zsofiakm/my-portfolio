@@ -21,14 +21,14 @@ const effects = {
 }
 
 const style = {
-    theme:       'dark',         // dark | light
+    theme:       'light',         // dark | light
     neutral:     'gray',         // sand | gray | slate
-    brand:       'yellow',         // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-    accent:      'magenta',       // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-    solid:       'contrast',     // color | contrast
+    brand:       'moss',         // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+    accent:      'orange',       // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+    solid:       'color',     // color | contrast
     solidStyle:  'flat',         // flat | plastic
-    border:      'rounded',      // rounded | playful | conservative
-    surface:     'translucent',  // filled | translucent
+    border:      'playful',      // rounded | playful | conservative
+    surface:     'filled',  // filled | translucent
     transition:  'all'           // all | micro | macro
 }
 
@@ -38,7 +38,7 @@ const display = {
 }
 
 const mailchimp = {
-    action: 'https://once-ui.us21.list-manage.com/subscribe/post?u=c1a5a210340eb6c7bff33b2ba&amp;id=0462d244aa&amp;f_id=00cd5fe1f0',
+    action: 'https://url/subscribe/post?parameters',
     effects: {
         gradient: true,
         dots:     false,

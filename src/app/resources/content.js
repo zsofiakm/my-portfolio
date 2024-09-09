@@ -13,8 +13,9 @@ const person = {
 }
 
 const newsletter = {
-    title: <>Subscribe to Zsofia's Newsletter</>,
-    description: <>I occasionally write about design, technology, and share the latest updates on Once UI.</>
+    display: false,
+    title: <>Subscribe to {person.firstName}'s Newsletter</>,
+    description: <>I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.</>
 }
 
 const social = [
@@ -46,8 +47,8 @@ const home = {
     label: 'Home',
     title: `Hello, I'm ${person.name}`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Designing & building open-source products</>,
-    subline: <>I'm Zsofia, product manager turned designer. I help engineers design, and developers to code with <SmartLink style={{marginLeft: '-0.125rem', marginRight: '-0.125rem'}} href="https://once-ui.com">Once UI</SmartLink>.</>
+    headline: <>Helping software teams work smarter</>,
+    subline: <>I'm Zsofia, product manager turned designer.<br/> I help engineers to design, and developers to code with <SmartLink style={{marginLeft: '-0.125rem', marginRight: '-0.125rem'}} href="https://once-ui.com">Once UI</SmartLink>.</>
 }
 
 const about = {
@@ -68,7 +69,7 @@ const about = {
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>I’m a Vienna-based product designer with a love for crafting beautiful and user-friendly products. I work on the Once UI design system and UI kit, helping to bring beautiful designs to life for developers and designers everywhere. </>
+        description: <>I’m a Vienna-based product builder with a love for crafting beautiful and user-friendly products. I work on the Once UI design system and UI kit, helping to bring beautiful designs to life for developers and designers everywhere. </>
     },
     work: {
         display: true, // set to false to hide this section

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Heading, Flex, Text, Button,  Avatar } from '@/once-ui/components';
+import { Heading, Flex, Text, Button,  Avatar, RevealFx } from '@/once-ui/components';
 import { Projects } from '@/app/work/components/Projects';
 
-import { about, baseURL, home, person, routes } from '@/app/resources'
+import { about, baseURL, home, newsletter, person, routes } from '@/app/resources'
 import { Mailchimp } from '@/app/components';
 import { Posts } from '@/app/blog/components/Posts';
 
@@ -19,7 +19,7 @@ export function generateMetadata() {
 			title,
 			description,
 			type: 'website',
-			url: `https://${baseURL}/blog`,
+			url: `https://${baseURL}`,
 			images: [
 				{
 					url: ogImage,
@@ -39,7 +39,7 @@ export function generateMetadata() {
 export default function Home() {
 	return (
 		<Flex
-			maxWidth="m" fillWidth gap="24"
+			maxWidth="m" fillWidth gap="xl"
 			direction="column" alignItems="center">
 			<script
 				type="application/ld+json"
@@ -57,55 +57,70 @@ export default function Home() {
 							name: person.name,
 							image: {
 								'@type': 'ImageObject',
-								url: `${baseURL}/images/avatar.png`,
+								url: `${baseURL}${person.avatar}`,
 							},
 						},
 					}),
 				}}
 			/>
 			<Flex
-				fillWidth maxWidth="s"
+				fillWidth
 				direction="column"
-				marginBottom="l"
-				gap="m">
-				<Heading
-					wrap="balance"
-					variant="display-strong-l">
-					{home.headline}
-				</Heading>
-				<Text
-					wrap="balance" 
-					onBackground="neutral-weak"
-					variant="body-default-l">
-					{home.subline}
-				</Text>
-				<Button
-					data-border="rounded"
-					href="/about"
-					variant="tertiary"
-					suffixIcon="chevronRight"
-					size="m">
+				paddingY="l" gap="m">
+				
 					<Flex
-						gap="8"
-						alignItems="center">
-						{about.avatar.display && (
-							<Avatar
-								style={{marginLeft: '-0.25rem'}}
-								src="/images/avatar.png"
-								size="s"/>
-							)}
-							About me
+						direction="column"
+						fillWidth maxWidth="s" gap="m">
+						<RevealFx translateY="4">
+							<Heading
+								wrap="balance"
+								variant="display-strong-l">
+								{home.headline}
+							</Heading>
+						</RevealFx>
+						<RevealFx translateY="8" delay={0.2}>
+							<Text
+								wrap="balance"
+								onBackground="neutral-weak"
+								variant="body-default-l">
+								{home.subline}
+							</Text>
+						</RevealFx>
+						<RevealFx translateY="12" delay={0.4}>
+							<Button
+								data-border="rounded"
+								href="/about"
+								variant="tertiary"
+								suffixIcon="chevronRight"
+								size="m">
+								<Flex
+									gap="8"
+									alignItems="center">
+									{about.avatar.display && (
+										<Avatar
+											style={{marginLeft: '-0.75rem', marginRight: '0.25rem'}}
+											src={person.avatar}
+											size="m"/>
+										)}
+										About me
+								</Flex>
+							</Button>
+						</RevealFx>
 					</Flex>
-				</Button>
+				
 			</Flex>
-			<Projects range={[1,1]}/>
+			<RevealFx translateY="16" delay={0.6}>
+				<Projects range={[1,1]}/>
+			</RevealFx>
 			{routes['/blog'] && (
 				<Flex fillWidth paddingX="20">
 					<Posts range={[1,2]} columns="2"/>
 				</Flex>
 			)}
 			<Projects range={[2]}/>
-			<Mailchimp/>
+			{ newsletter.display &&
+				<Mailchimp/>
+			}
 		</Flex>
 	);
 }
